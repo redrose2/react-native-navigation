@@ -160,7 +160,8 @@ class Modal extends Dialog implements DialogInterface.OnDismissListener, ScreenS
     private void setWindowFlags() {
         Window window = getWindow();
         if (window == null) return;
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+	window.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.WHITE));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         }
